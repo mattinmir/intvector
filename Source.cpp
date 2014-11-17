@@ -3,6 +3,8 @@
 
 int main()
 {
+
+
 	intvector v, v2, v3;
 
 	v.push_back(66);
@@ -12,10 +14,17 @@ int main()
 	v.push_back(50);
 	v.push_back(1);
 
+	int x = v.at(3);
+
+	int y = v[3];
+	v[3] = 47;
+	y = v[3];
+
+	int z = v.find(1);
+
 	v3 = v2 = v;
 
-	int x = v[3];
-	v[3] = 47;
-	x = v[3];
+
+	
 	return 0;
 }

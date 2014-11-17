@@ -6,6 +6,13 @@ intvector::intvector() : size(0), capacity(4), vp(new int[4])
 intvector::intvector(int length) : size(0), capacity(length), vp(new int[length])
 {}
 
+intvector::intvector(const intvector &v) : size(v.size), capacity(v.capacity), vp(new int[capacity])
+{
+	for (unsigned i = 0; i < v.size; i++)
+		vp[i] = v[i];
+	
+}
+
 intvector::~intvector()
 {
 	delete[] vp;
@@ -48,6 +55,17 @@ int intvector::get_capacity() const
 	return capacity;
 }
 
+int intvector::find(int num)
+{
+	for (int i = 0; i < size; i++)
+	{
+		if (vp[i] == num)
+			return i;
+	}
+
+	return -1;
+}
+
 intvector& intvector::operator= (const intvector &iv)
 {
 	if (vp != iv.vp)
@@ -55,7 +73,7 @@ intvector& intvector::operator= (const intvector &iv)
 		delete[] vp;
 		vp = new int[iv.capacity];
 		for (unsigned i = 0; i < iv.size; i++)
-			push_back(iv.vp[i]);
+			push_back(iv[i]);
 	}
 
 	return *this;

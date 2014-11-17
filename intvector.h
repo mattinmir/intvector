@@ -6,6 +6,8 @@ public:
 
 	intvector(int length);
 
+	intvector(const intvector &v);
+
 	~intvector();
 
 	void push_back(int num);
@@ -15,6 +17,8 @@ public:
 	int get_size() const;
 
 	int get_capacity() const;
+
+	int find(int num);
 
 	intvector& operator= (const intvector &iv);
 
