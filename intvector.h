@@ -1,5 +1,5 @@
-#ifndef "INTVECTOR_H"
-#define "INTVECTOR_H"
+#ifndef INTVECTOR_H
+#define INTVECTOR_H
 class intvector
 {
 public:
